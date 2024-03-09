@@ -1,0 +1,41 @@
+* {
+    font-family: Source Code Pro;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces,
+#mode,
+#idle_inhibitor,
+#pulseaudio,
+#network,
+#battery,
+#clock,
+#custom-separator {
+	padding: 0 3px;
+	color: white;
+}
+
+#battery.critical, #network.disconnected {
+    color: red;
+}
+#battery.charging {
+    color: white;
+}
+
+window#waybar {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+#workspaces button label {
+	color: grey;
+}
+
+#workspaces button.focused label {
+	color: white;
+}
+
+#workspaces button.urgent label {
+	background-color: red;
+}

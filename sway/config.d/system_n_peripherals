@@ -1,0 +1,38 @@
+# -- SYSTEM
+# gaps
+gaps inner 0
+gaps outer 0
+
+# windows
+default_border pixel 2
+default_floating_border pixel 0
+# class         border  backgr. text   indicator child_border
+client.focused	#ffffff	#ffffff	#000000	#ffffff	#ffffff
+client.unfocused #000000 #000000 #ffffff #000000 #000000
+
+# -- LAPTOP LID
+bindswitch --reload --locked lid:on exec swaylock -f -i /home/undefined_user/.local/share/backgrounds/dark_login_tux.png && playerctl pause
+# -- TOUCHPAD
+focus_follows_mouse no
+input "1267:196:Elan_Touchpad" {
+    tap disabled
+    natural_scroll enabled
+    click_method clickfinger
+    middle_emulation enabled
+    scroll_method two_finger
+    dwt enabled
+    scroll_factor 0.5
+}
+
+bindsym $mod+Shift+grave exec swaymsg input "1267:196:Elan_Touchpad" events enabled
+bindsym $mod+grave exec swaymsg input "1267:196:Elan_Touchpad" events disabled
+# Hides mouse whenever typing is detected. NOICE!!
+seat * hide_cursor when-typing enable
+bindsym $mod+s exec warpd --normal
+
+# -- KEYBOARD
+input type:keyboard {
+    xkb_layout us,us
+    xkb_variant dvorak,
+	xkb_options ctrl:swap_lwin_lctl
+}

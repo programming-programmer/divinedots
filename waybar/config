@@ -1,0 +1,46 @@
+{
+    "layer": "bottom",
+        "position": "top", 
+        "height": 26, 
+        "spacing": 0,
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-right": ["idle_inhibitor", "custom/separator", "network",  "custom/separator", "pulseaudio",  "custom/separator", "battery", "custom/separator", "clock" ],
+
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            }
+        },
+        // Plan is that charging or plugged in says Charging n%
+        "battery": {
+            "states": {
+                // "good": 95,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "Battery {capacity}%",
+            "format-charging": "Charging {capacity}%",
+        },
+        // ntp seems to be a dependency for correct time
+        // as well as ntpdate then run "sudo ntpdate"
+        "clock": {
+            "interval": 30,
+            "format": "{:%a %b %d %H:%M}",
+        },
+        "network": {
+            "format": "Connected {essid}",
+            "format-disconnected": "Disconnected ⚠",
+            "max-length": 50,
+        },
+        "pulseaudio": {
+            "format": "{desc} {volume}%",
+        },
+        "custom/separator": {
+            "format": "|",
+            "interval": "once",
+            "tooltip": false
+        },
+}
+

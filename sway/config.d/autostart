@@ -1,0 +1,17 @@
+exec_always mako -c ~/.config/mako/config
+
+exec_always wl-paste -t text --watch clipman store
+
+exec_always swayidle -w \
+  timeout 600 'swaylock -f -i ~/.local/share/backgrounds/dark_login_tux.png' \
+  timeout 570 'swaymsg "output * dpms off"' \
+  resume 'swaymsg "output * dpms on"' \
+
+exec_always waybar
+
+set $wallpaper /home/undefined_user/.local/share/backgrounds/hallo_kitty.jpg
+exec "swaybg -i $wallpaper"
+exec_always "pkill swaybg && swaybg -i $wallpaper"
+
+exec_always playerctld daemon
+exec_always foot --server

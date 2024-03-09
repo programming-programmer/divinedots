@@ -1,0 +1,128 @@
+#Basic Settings
+set hidden true
+set scrolloff 8
+set cursorpreviewfmt "\033[7m"
+
+# Open file
+cmd open ${{
+    case $(file --mime-type "$(readlink -f $f)" -b) in
+	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) libreoffice $fx ;;
+
+    text/*|application/json|inode/x-empty|application/x-subrip) nvim $fx;;
+
+	#image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
+	#image/svg+xml) display -- $f ;;
+
+	image/*) setsid -f imv-wayland $f ;;
+
+	audio/*|video/x-ms-asf) mpv --audio-display=no $f ;;
+	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+
+	application/pdf|application/vnd.djvu|application/epub*) setsid -f zathura $fx >/dev/null 2>&1 ;;
+
+        *) for f in $fx; do setsid -f xdg-open $f >/dev/null 2>&1; done;;
+    esac
+}}
+# Custom Functions ---
+
+# Make Directory
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+# Make File
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  touch $ans
+}}
+
+# New Folder with selected items
+cmd newfolder ${{
+    set -f
+    read newd
+    printf "Directory name: "
+    mkdir -- "$newd"
+    mv -- $fx "$newd"
+}}
+
+# Unzip/untar based on extension
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *.tgz) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+# compress current file or selected files with tar and gunzip
+cmd tar ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    tar czf $1.tar.gz $1
+    rm -rf $1
+}}
+
+# compress current file or selected files with zip
+cmd zip ${{
+    set -f
+    mkdir $1
+    cp -r $fx $1
+    zip -r $1.zip $1
+    rm -rf $1
+}}
+
+cmd quit-and-cd &{{
+    pwd > $LF_CD_FILE
+    lf -remote "send $id quit"
+}}
+
+cmd yank-path $printf '%s' "$fx" | wl-copy
+
+# Unbind some bindings
+    map m
+    map d
+    map Z
+    map T
+    map N
+    map y
+    map A
+    map b
+    map B
+    map Q
+
+# Basic Functions
+map . set hidden!
+map mf mkfile
+map md mkdir
+map N newfolder
+map ez zip
+map et tar
+map D delete
+map ee unarchive
+map x cut
+map y copy
+map p paste
+map <c-c> quit
+map q quit
+map Q quit-and-cd
+map Y yank-path
+map J :updir; down; open
+map K :updir; up; open
+
+# Movement
+map gg top
+map gh cd ~
+map gc cd ~/.config/
+map gl cd ~/.local/
+map gd cd ~/Downloads/
+map gD cd ~/Desktop/
+map gn cd ~/norg-notes/
+map gN cd ~/notes/
+map gp cd ~/Projects/
