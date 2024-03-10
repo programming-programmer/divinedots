@@ -1,8 +1,8 @@
 -- Default options:
 require('midnight').setup ({
-    HighlightGroup = {
-        clear = true
-    },
+--    HighlightGroup = {
+--        clear = true
+--    },
 })
 
 function ColorMyPencils(color) 

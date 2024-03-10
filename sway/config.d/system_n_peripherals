@@ -11,7 +11,7 @@ client.focused	#ffffff	#ffffff	#000000	#ffffff	#ffffff
 client.unfocused #000000 #000000 #ffffff #000000 #000000
 
 # -- LAPTOP LID
-bindswitch --reload --locked lid:on exec swaylock -f -i /home/undefined_user/.local/share/backgrounds/dark_login_tux.png && playerctl pause
+bindswitch --reload --locked lid:on exec swaylock -f -i /home/undefined_user/.local/share/backgrounds/login_tux.png && playerctl pause
 # -- TOUCHPAD
 focus_follows_mouse no
 input "1267:196:Elan_Touchpad" {

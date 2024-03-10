@@ -1,5 +1,5 @@
 # Misc
-bindsym $mod+d exec bemenu-run --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'
+bindsym $mod+d exec bemenu-run -p 'run ' --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'
 bindsym $mod+c exec clipman pick --tool=bemenu --tool-args="-l 5 -p 'clipboard' --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'"
 bindsym $mod+BackSpace exec ~/.local/bin/powermenu
 bindsym $mod+i exec ~/.local/bin/emoji_picker
@@ -86,6 +86,8 @@ mode "Record" {
     
     bindsym p exec grimshot save area
     bindsym Shift+p exec grimshot save window
+
+    bindsym u exec url-functions.sh
 
     bindsym r exec notify-send "Webcam Preview" && exec mpv av://v4l2:/dev/video0 --profile=low-latency --untimed
 

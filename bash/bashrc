@@ -11,6 +11,11 @@ shopt -s expand_aliases
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Clean-up, clean up, everybody everywhere!
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # Bash History
 HISTSIZE=100
 HISTFILESIZE=200
@@ -33,3 +38,11 @@ PS1="\[\033[1;37m\]\w $ \[\033[00m\]" # Setting PS1 to show full path
 export PROMPT_DIRTRIM=3 # Trimming path to 4 directories
 
 source ~/.config/lf/lf.bash
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+    fi
+fi

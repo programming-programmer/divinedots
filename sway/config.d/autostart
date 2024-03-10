@@ -9,7 +9,7 @@ exec_always swayidle -w \
 
 exec_always waybar
 
-set $wallpaper /home/undefined_user/.local/share/backgrounds/hallo_kitty.jpg
+set $wallpaper /home/undefined_user/.local/share/backgrounds/suck_on_windows.jpg
 exec "swaybg -i $wallpaper"
 exec_always "pkill swaybg && swaybg -i $wallpaper"
 
