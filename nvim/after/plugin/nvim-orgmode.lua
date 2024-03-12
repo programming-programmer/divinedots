@@ -23,14 +23,14 @@ org.setup({
             description = 'Task',
             template = '** TODO %?\n ',
             target = '~/norg-notes/gtd.org',
-            headline = 'Refile'
+            headline = 'General'
         },
 
         T = {
             description = "Task - Today",
             template = '** TODO %?\nDEADLINE: %t',
             target = '~/norg-notes/gtd.org',
-            headline = 'Refile'
+            headline = 'General'
         },
 
         s = {
@@ -48,6 +48,13 @@ org.setup({
         },
 
     },
+    mappings = {
+        org = {
+            org_cycle = false,
+            org_return = false,
+        }
+    },
+
     org_blank_before_new_entry = {
         heading = false,
         plain_list_item = false,
