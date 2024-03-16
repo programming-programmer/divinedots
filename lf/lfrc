@@ -122,7 +122,10 @@ map gh cd ~
 map gc cd ~/.config/
 map gl cd ~/.local/
 map gd cd ~/Downloads/
-map gD cd ~/Desktop/
-map gn cd ~/norg-notes/
-map gN cd ~/notes/
+map gnn cd ~/norg-notes/
+map gns cd ~/norg-notes/School/SPR_2024/
+map gnm cd ~/norg-notes/Misc/
+map gnw cd ~/norg-notes/Watchlist/
+map gnb cd ~/norg-notes/Books/
+map gnh cd ~/norg-notes/Hobbies/
 map gp cd ~/Projects/
