@@ -1,6 +1,8 @@
 #Basic Settings
 set hidden true
 set scrolloff 8
+set sixel true
+set previewer "~/.local/bin/preview.sh"
 set cursorpreviewfmt "\033[7m"
 
 # Open file
@@ -84,6 +86,8 @@ cmd quit-and-cd &{{
 }}
 
 cmd yank-path $printf '%s' "$fx" | wl-copy
+cmd set-bg $printf '%s' "$fx" | wl-copy && sed -i "12 s,/home.*,$(wl-paste)," ~/.config/sway/config.d/autostart && swaymsg 'exec pkill waybar && swaymsg reload'
+
 
 # Unbind some bindings
     map m
@@ -115,12 +119,15 @@ map Q quit-and-cd
 map Y yank-path
 map J :updir; down; open
 map K :updir; up; open
+map B set-bg
 
 # Movement
 map gg top
 map gh cd ~
 map gc cd ~/.config/
-map gl cd ~/.local/
+map gll cd ~/.local/
+map glb cd ~/.local/share/backgrounds/
+map gls cd ~/.local/bin/
 map gd cd ~/Downloads/
 map gnn cd ~/norg-notes/
 map gns cd ~/norg-notes/School/SPR_2024/
