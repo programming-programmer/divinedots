@@ -129,10 +129,10 @@ map gll cd ~/.local/
 map glb cd ~/.local/share/backgrounds/
 map gls cd ~/.local/bin/
 map gd cd ~/Downloads/
-map gnn cd ~/norg-notes/
-map gns cd ~/norg-notes/School/SPR_2024/
-map gnm cd ~/norg-notes/Misc/
-map gnw cd ~/norg-notes/Watchlist/
-map gnb cd ~/norg-notes/Books/
-map gnh cd ~/norg-notes/Hobbies/
+map gnn cd ~/notes/
+map gns cd ~/notes/School/SPR_2024/
+map gnm cd ~/notes/Misc/
+map gnw cd ~/notes/Watchlist/
+map gnb cd ~/notes/Books/
+map gnh cd ~/notes/Hobbies/
 map gp cd ~/Projects/

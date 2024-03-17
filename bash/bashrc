@@ -4,9 +4,7 @@ bind 'TAB:menu-complete'
 bind 'C-y:yes'
 
 shopt -s histappend
-shopt -s checkwinsize
 shopt -s autocd
-shopt -s expand_aliases 
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -22,7 +20,7 @@ HISTFILESIZE=200
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
 
 alias ls="ls --color=auto"
-alias tms="tmux new -d -s hack && sleep 0.1s && tmux new -d -s notes -c ~/norg-notes && tmux attach"
+alias tms="tmux new -d -s hack && sleep 0.1s && tmux new -d -s notes -c ~/notes/ && tmux attach"
 alias tma="tmux attach"
 
 # enable programmable completion features 
@@ -34,15 +32,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+source ~/.config/lf/lf.bash
+
 PS1="\[\033[1;37m\]\w $ \[\033[00m\]" # Setting PS1 to show full path
 export PROMPT_DIRTRIM=3 # Trimming path to 4 directories
 
-source ~/.config/lf/lf.bash
-
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-    fi
-fi
+# if running bash - THIS CAUSES THE ERROR OF PS1 NOT LOADING!!
+#if [ -n "$BASH_VERSION" ]; then
+#    # include .bashrc if it exists
+#    if [ -f "$HOME/.bashrc" ]; then
+#    . "$HOME/.bashrc"
+#    fi
+#fi
