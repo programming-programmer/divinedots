@@ -37,9 +37,9 @@ vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = 'nc'
-vim.wo.foldlevel = 99
+-- vim.opt.conceallevel = 2
+-- vim.opt.concealcursor = 'nc'
+-- vim.wo.foldlevel = 99
 
 -- highlight yanked text for 200ms using the "Visual" highlight group
 vim.cmd[[

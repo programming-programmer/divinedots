@@ -2,8 +2,8 @@ local org = require('orgmode')
 
 org.setup_ts_grammar()
 org.setup({
-    org_agenda_files = "~/norg-notes/**/*",
-    org_default_notes_file = "~/norg-notes/refile.org",
+    org_agenda_files = "~/notes/**/*",
+    org_default_notes_file = "~/notes/refile.org",
     win_split_mode = "tabnew",
     org_todo_keywords = { "TODO(t)", "PROG", "|", "DONE", "WAITING", "CANCELLED" },
     org_deadline_warning_days = 8,
@@ -22,28 +22,28 @@ org.setup({
         t = {
             description = 'Task',
             template = '** TODO %?\n ',
-            target = '~/norg-notes/gtd.org',
+            target = '~/notes/gtd.org',
             headline = 'General'
         },
 
         T = {
             description = "Task - Today",
             template = '** TODO %?\nDEADLINE: %t',
-            target = '~/norg-notes/gtd.org',
+            target = '~/notes/gtd.org',
             headline = 'General'
         },
 
         s = {
             description = "Someday",
             template = '** TODO %?',
-            target = '~/norg-notes/gtd.org',
+            target = '~/notes/gtd.org',
             headline = 'Someday'
         },
 
         c = {
             description = "Computer Setup",
             template = '** TODO %?',
-            target = '~/norg-notes/gtd.org',
+            target = '~/notes/gtd.org',
             headline = 'Computer Setup'
         },
 

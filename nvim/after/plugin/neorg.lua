@@ -32,8 +32,6 @@ require('neorg').setup {
             },
         },
         ["core.ui"] = {},
-        ["core.tempus"] = {},
-        ["core.ui.calendar"] = {},
         ["core.keybinds"] = {
             config = {
                 default_keybinds = true,

@@ -1,5 +1,5 @@
 EDITOR=/opt/nvim-linux64/bin/nvim
-export BEMENU_OPTS="--tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'"
+export BEMENU_OPTS="-b --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'"
 export JAVA_HOME="/opt/jdk-21.0.2"
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH="$PATH:/opt/nvim-linux64/bin":$PATH

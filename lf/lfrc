@@ -1,8 +1,6 @@
 #Basic Settings
 set hidden true
 set scrolloff 8
-set sixel true
-set previewer "~/.local/bin/preview.sh"
 set cursorpreviewfmt "\033[7m"
 
 # Open file

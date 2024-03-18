@@ -1,6 +1,6 @@
 # Misc
-bindsym $mod+d exec bemenu-run -p 'run ' --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff' | xargs swaymsg exec
-bindsym $mod+c exec clipman pick --tool=bemenu --tool-args="-l 5 -p 'clipboard' --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'"
+bindsym $mod+d exec bemenu-run -b -p 'run ' --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff' | xargs swaymsg exec
+bindsym $mod+c exec clipman pick --tool=bemenu --tool-args="-b -l 5 -p 'clipboard' --tb '#000000' --fb '#000000' --cb '#000000' --nb '#000000' --hb '#000000' --fbb '#000000' --sb '#000000' --ab '#000000' --tf '#ffffff' --nf '#808080' --af '#808080' --hf '#ffffff'"
 bindsym $mod+Shift+d exec windows.py
 bindsym $mod+BackSpace exec ~/.local/bin/powermenu
 bindsym $mod+i exec ~/.local/bin/emoji_picker
@@ -22,21 +22,21 @@ bindsym $mod+Shift+equal exec amixer -D pulse sset Master 5%+
 bindsym $mod+minus exec amixer -D pulse sset Master 1%-
 bindsym $mod+equal exec amixer -D pulse sset Master 1%+
 bindsym $mod+p exec swaymsg 'exec playerctl play-pause'
-bindsym $mod+u exec url-functions.sh
+bindsym $mod+u exec yt.sh
 
 # Browser
 # Qutebrowser come back!!!!! :(((. Actuarlly on further thought, nooo!!!!!!
-bindsym $mod+w exec firefox
+bindsym $mod+w exec firefox --new-window
 bindsym $mod+Shift+w exec firefox --private-window
 
 # Terminal and stuff
-bindsym $mod+t exec foot
-bindsym $mod+Shift+f exec foot lf
-bindsym $mod+Shift+n exec foot nmtui
-bindsym $mod+Shift+b exec foot bluetoothctl
-bindsym $mod+Shift+Right exec foot bc
-bindsym $mod+Shift+t exec foot nvim ~/norg-notes/gtd.org
-bindsym $mod+Shift+c exec foot cmus
+bindsym $mod+t exec footclient
+bindsym $mod+Shift+f exec footclient lf
+bindsym $mod+Shift+n exec footclient nmtui
+bindsym $mod+Shift+b exec footclient bluetoothctl
+bindsym $mod+Shift+Right exec footclient bc
+bindsym $mod+Shift+t exec footclient nvim ~/notes/gtd.org
+bindsym $mod+Shift+c exec footclient cmus
 
 #Making sure these mfs FLOAT
 for_window [app_id="foot"] floating enable
