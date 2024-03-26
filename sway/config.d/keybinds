@@ -36,7 +36,6 @@ bindsym $mod+Shift+n exec footclient nmtui
 bindsym $mod+Shift+b exec footclient bluetoothctl
 bindsym $mod+Shift+Right exec footclient bc
 bindsym $mod+Shift+t exec footclient nvim ~/notes/gtd.org
-bindsym $mod+Shift+c exec footclient cmus
 
 #Making sure these mfs FLOAT
 for_window [app_id="foot"] floating enable

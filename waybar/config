@@ -1,6 +1,7 @@
 {
     "layer": "bottom",
         "position": "bottom", 
+        // Minimum required (26) - hope to change
         "height": 26, 
         "spacing": 0,
         "modules-left": ["sway/workspaces", "sway/mode"],
@@ -30,8 +31,8 @@
             "format": "{:%a %b %d %H:%M}",
         },
         "network": {
-            "format": "Connected {essid}",
-            "format-disconnected": "Disconnected ⚠",
+            "format": " {essid}",
+            "format-disconnected": "⚠  Disconnected",
             "max-length": 50,
         },
         "pulseaudio": {

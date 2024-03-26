@@ -44,3 +44,5 @@ export PROMPT_DIRTRIM=3 # Trimming path to 4 directories
 #    . "$HOME/.bashrc"
 #    fi
 #fi
+
+# Pomodoro shell script here: https://github.com/rukshn/pomodoro?tab=readme-ov-file

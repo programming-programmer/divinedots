@@ -1,18 +1,18 @@
 exec_always mako -c ~/.config/mako/config
+exec_always 'foot -s'
 
 exec_always wl-paste -t text --watch clipman store
 
 exec_always swayidle -w \
-  timeout 600 'swaylock -f -i ~/.local/share/backgrounds/login_tux.png' \
+  timeout 600 'swaylock -f -i ~/.local/share/backgrounds/ripple_white.png' \
   timeout 570 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
 
 exec_always waybar
 
-set $wallpaper /home/undefined_user/.local/share/backgrounds/clear_race.jpg
+set $wallpaper /home/undefined_user/.local/share/backgrounds/phase4.jpg
 
 exec "swaybg -i $wallpaper"
 exec_always "pkill swaybg && swaybg -i $wallpaper"
 
 exec_always playerctld daemon
-exec_always foot --server

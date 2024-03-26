@@ -7,14 +7,11 @@ gaps outer 0
 default_border pixel 2
 default_floating_border pixel 0
 # class         border  backgr. text   indicator child_border
-client.focused	#ffffff	#ffffff	#000000	#ffffff	#ffffff
-client.unfocused #000000 #000000 #ffffff #000000 #000000
-# transparency
-for_window [app_id="firefox"] opacity 0.9
-
+client.focused #FFFFFF #FFFFFF #000000 #FFFFFF #FFFFFF
+client.unfocused #808080 #808080 #000000 #808080 #808080
 
 # -- LAPTOP LID
-bindswitch --reload --locked lid:on exec swaylock -f -i /home/undefined_user/.local/share/backgrounds/login_tux.png && playerctl pause
+bindswitch --reload --locked lid:on exec swaylock -f -i /home/undefined_user/.local/share/backgrounds/ripple_white.png && playerctl pause
 # -- TOUCHPAD
 focus_follows_mouse no
 input "1267:196:Elan_Touchpad" {
@@ -29,7 +26,6 @@ input "1267:196:Elan_Touchpad" {
 
 bindsym $mod+Shift+grave exec swaymsg input "1267:196:Elan_Touchpad" events enabled
 bindsym $mod+grave exec swaymsg input "1267:196:Elan_Touchpad" events disabled
-# Hides mouse whenever typing is detected. NOICE!!
 seat * hide_cursor when-typing enable
 bindsym $mod+s exec warpd --normal
 
