@@ -56,7 +56,7 @@ floating_modifier $mod normal
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-bindsym $mod+Shift+m move scratchpad
+bindsym $mod+Shift+m move scratchpad, move center
 bindsym $mod+m scratchpad show
 
 mode "Layout" {
@@ -142,4 +142,4 @@ bindsym $mod+Control+6 move container to workspace number 6, workspace number 6
 bindsym $mod+Control+7 move container to workspace number 7, workspace number 7
 bindsym $mod+Control+8 move container to workspace number 8, workspace number 8
 bindsym $mod+Control+9 move container to workspace number 9, workspace number 9
-bindsym $mod+Control+0 move container to workspace number 10, workspace number 0
+bindsym $mod+Control+0 move container to workspace number 10, workspace number 10

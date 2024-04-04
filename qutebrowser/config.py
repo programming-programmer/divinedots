@@ -1,20 +1,23 @@
 # Web Browsers:
 c.url.searchengines = {
-    "DEFAULT": "https://search.brave.com/search?q={}", 
+    "DEFAULT": "https://searxng.site/searxng/search?q={}", 
+    "b": "https://search.brave.com/search?q={}", 
     "g": "https://www.google.com/search?q={}", 
     "yt": "https://www.youtube.com/results?search_query={}",
     "myt": "https://music.youtube.com/search?q={}",
     "dict": "https://www.merriam-webster.com/dictionary/{}",
     "syn": "https://www.merriam-webster.com/thesaurus/{}",
 }
+c.hints.selectors['all'].append('label[for^="checkbox_"]')
 
 # Start and Default pages
 c.url.default_page = "about:blank"
 c.url.start_pages = "about:blank"
 
 # Theme and Dark Mode
-c.colors.webpage.preferred_color_scheme = 'dark'
 c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.bg = '#030614'
+c.colors.webpage.preferred_color_scheme = 'dark'
 
 c.input.insert_mode.auto_leave = True
 c.input.insert_mode.auto_load = False
@@ -51,6 +54,7 @@ config.bind(",F", "hint links spawn -v firefox {hint-url}")
 config.bind(",a", "adblock-update")
 
 config.bind("o", "set-cmd-text -s :open -s")
+config.bind("<Ctrl+l>", "set-cmd-text -s :open -s")
 config.bind("O", "set-cmd-text -s :open -s -t")
 config.bind("wo", "set-cmd-text -s :open -s -w")
 config.bind("M", "set-cmd-text -s :bookmark-add {url}")
@@ -58,10 +62,16 @@ config.bind(";f", "hint --rapid")
 config.unbind("+")
 config.unbind("-")
 config.unbind("=")
+config.unbind('D')
+config.unbind('d')
+config.unbind('u')
+config.unbind("<Ctrl+d>")
+config.unbind("<Ctrl+u>")
+config.bind("d", "scroll-page 0 0.5")
+config.bind("u", "scroll-page 0 -0.5")
 config.bind("<Ctrl-0>", "zoom")
 config.bind("<Ctrl-=>", "zoom-in")
 config.bind("<Ctrl-->", "zoom-out")
-config.unbind("d")
 config.bind("X", "tab-close --force")
 config.bind("K", "tab-next")
 config.bind("J", "tab-prev")
