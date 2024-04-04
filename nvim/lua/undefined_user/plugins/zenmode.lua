@@ -2,34 +2,65 @@ return {
     "folke/zen-mode.nvim",
 
     config = function()
-        vim.keymap.set("n", "<leader>zz", function()
-            require("zen-mode").setup {
+        ---- GENERAL
+        vim.keymap.set("n", "<leader>zu", function()
+            require("zen-mode").toggle({
                 window = {
-                    width = 90,
-                    options = { }
+                    backdrop = 1,
+                    options = {
+                        signcolumn = "no",
+                        colorcolumn = "0",
+                    },
                 },
-            }
-            require("zen-mode").toggle()
-            vim.wo.wrap = false
-            vim.wo.number = true
-            vim.wo.rnu = true
-            ColorMyPencils()
-            LineNumberColors()
+
+                ---@diagnostic disable-next-line: unused-local
+                on_open = function(win)
+                    require('fidget').progress.suppress(true)
+                end,
+
+                on_close = function()
+                    require('fidget').progress.suppress(false)
+                end
+            })
         end)
 
-        vim.keymap.set("n", "<leader>zZ", function()
-            require("zen-mode").setup {
+        ---- WRITING
+        vim.keymap.set("n", "<leader>ze", function()
+            require("zen-mode").toggle({
                 window = {
-                    width = 80,
-                    options = { }
+                    backdrop = 1,
+                    options = {
+                        signcolumn = "no",
+                        colorcolumn = "0",
+                        cursorline = false
+                    },
                 },
-            }
-            require("zen-mode").toggle()
-            vim.wo.wrap = false
-            vim.wo.number = false
-            vim.wo.rnu = false
-            ColorMyPencils()
-            LineNumberColors()
+
+                plugins = {
+                    options = {
+                        enabled = true,
+                        laststatus = 0,
+                    },
+                    tmux = { enabled = true },
+                },
+
+                ---@diagnostic disable-next-line: unused-local
+                on_open = function(win)
+                    require('fidget').progress.suppress(true)
+                    vim.keymap.set("n", "j", "gj")
+                    vim.keymap.set("n", "k", "gk")
+                    vim.keymap.set("n", "gj", "j")
+                    vim.keymap.set("n", "gk", "k")
+                end,
+
+                on_close = function()
+                    require('fidget').progress.suppress(false)
+                    vim.keymap.set("n", "j", "j")
+                    vim.keymap.set("n", "k", "k")
+                    vim.keymap.set("n", "gj", "gj")
+                    vim.keymap.set("n", "gk", "gk")
+                end,
+            })
         end)
     end
 }

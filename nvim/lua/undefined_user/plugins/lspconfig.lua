@@ -1,4 +1,3 @@
--- If you want to find lsp bindings and auto-completion go to: ~/.config/nvim/lua/undefined_user/plugins/completion.lua
 return {
     "neovim/nvim-lspconfig",
 
@@ -6,42 +5,32 @@ return {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "j-hui/fidget.nvim",
-        "hrsh7th/cmp-nvim-lsp",
+        'hrsh7th/cmp-nvim-lsp',
     },
 
     config = function()
-        local lspconfig = require('lspconfig')
-        -- If you want the server auto-downloaded then add it to ensure_installed
-        local servers = { 'jdtls', 'lua_ls', 'texlab' } -- You can always add more 🤗
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        local cmp_lsp = require('cmp_nvim_lsp')
+        local capabilities = vim.tbl_deep_extend(
+            "force",
+            {},
+            vim.lsp.protocol.make_client_capabilities(),
+            cmp_lsp.default_capabilities())
 
         require('lspconfig.ui.windows').default_options.border = 'rounded'
 
-        -- Fidget: for status on lsp and notification stuff
         require('fidget').setup({ notification = {window = { winblend = 0 }} })
-
-        -- MASON
         require("mason").setup({ ui = { border = "rounded" } })
+
         require("mason-lspconfig").setup({
-            ensure_installed = servers,
-        })
+            ensure_installed = { 'jdtls', 'lua_ls', 'texlab', 'gradle_ls', },
 
-        for _, lsp in ipairs(servers) do
-            lspconfig[lsp].setup {
-                capabilities = capabilities,
+            handlers = {
+                function(server_name)
+                    require('lspconfig')[server_name].setup {
+                        capabilities = capabilities
+                    }
+                end,
             }
-        end
-
-        vim.diagnostic.config({
-            update_in_insert = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
-            },
         })
     end
 }

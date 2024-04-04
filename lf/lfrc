@@ -97,7 +97,7 @@ cmd set-bg $printf '%s' "$fx" | wl-copy && sed -i "13 s,/home.*,$(wl-paste)," ~/
 
 # Basic Functions
 map . set hidden!
-map mf mkfile
+map '%' mkfile
 map d mkdir
 map N newfolder
 map ee unarchive
@@ -107,7 +107,6 @@ map D delete
 map x cut
 map y copy
 map p paste
-map <c-c> quit
 map q quit
 map Q quit-and-cd
 map Y yank-path
@@ -123,7 +122,7 @@ map gll cd ~/.local/
 map glb cd ~/.local/share/backgrounds/
 map gls cd ~/.local/bin/
 map gd cd ~/Downloads/
-map gnn cd ~/notes/
+map gN cd ~/notes/
 map gns cd ~/notes/School/SPR_2024/
 map gnm cd ~/notes/Misc/
 map gnw cd ~/notes/Watchlist/

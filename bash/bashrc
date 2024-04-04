@@ -20,7 +20,7 @@ HISTFILESIZE=200
 HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
 
 alias ls="ls --color=auto"
-alias tms="tmux new -d -s hack && sleep 0.1s && tmux new -d -s notes -c ~/notes/ && tmux attach"
+alias tms="tmux new -d -s hack && sleep 0.1s && tmux new -d -s notes -c ~/notes/ && tmux new -d -s util && tmux attach"
 alias tma="tmux attach"
 
 # enable programmable completion features 

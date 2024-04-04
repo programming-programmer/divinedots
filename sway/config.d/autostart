@@ -4,13 +4,13 @@ exec_always 'foot -s'
 exec_always wl-paste -t text --watch clipman store
 
 exec_always swayidle -w \
-  timeout 600 'swaylock -f -i ~/.local/share/backgrounds/ripple_white.png' \
+  timeout 600 'swaylock -f -i ~/.local/share/backgrounds/ripple_black.png' \
   timeout 570 'swaymsg "output * dpms off"' \
   resume 'swaymsg "output * dpms on"' \
 
 exec_always waybar
 
-set $wallpaper /home/undefined_user/.local/share/backgrounds/phase4.jpg
+set $wallpaper /home/undefined_user/.local/share/backgrounds/jetsetradioBLACK.png
 
 exec "swaybg -i $wallpaper"
 exec_always "pkill swaybg && swaybg -i $wallpaper"

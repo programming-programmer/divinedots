@@ -1,6 +1,6 @@
 -- WHERE"S THE MAP!@@!@#>>? HERE IT IS!!!! SIKE YOU THOUGHT!!
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+-- vim.g.maplocalleader = ","
 vim.keymap.set("n", "<leader>ad", vim.cmd.Ex)
 
 -- Yall got me FUNKED up if you think I'm reachin my teenie pinkie for that teeny escape key

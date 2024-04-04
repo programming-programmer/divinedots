@@ -3,6 +3,7 @@ export BEMENU_OPTS="-b --tb '#000000' --fb '#000000' --cb '#000000' --nb '#00000
 export JAVA_HOME="/opt/jdk-21.0.2"
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH="$PATH:/opt/nvim-linux64/bin":$PATH
+export PATH=$PATH:/opt/gradle/gradle-8.7/bin
 export PATH="$PATH:/home/undefined_user/.local/bin":$PATH
 
 # So bash is loaded because tmux only loads login stuff which isn't bashrc :(
