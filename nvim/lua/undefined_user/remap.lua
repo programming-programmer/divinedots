@@ -33,3 +33,14 @@ vim.keymap.set("n", "<leader>tn", function()
     -- ILOVECOLORS!!!
     LineNumberColors()
 end)
+-- Writing stuff
+-- MLA template
+vim.keymap.set("n", "\\mla", function ()
+    vim.cmd("read ~/notes/Templates/mla.txt")
+    vim.cmd("normal 36jciw")
+end)
+-- Speech template
+vim.keymap.set("n", "\\speech", function ()
+    vim.cmd("read ~/notes/Templates/speech.txt")
+    vim.cmd("normal jf{a")
+end)

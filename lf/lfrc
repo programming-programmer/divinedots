@@ -122,7 +122,7 @@ map gll cd ~/.local/
 map glb cd ~/.local/share/backgrounds/
 map gls cd ~/.local/bin/
 map gd cd ~/Downloads/
-map gN cd ~/notes/
+map gnn cd ~/notes/
 map gns cd ~/notes/School/SPR_2024/
 map gnm cd ~/notes/Misc/
 map gnw cd ~/notes/Watchlist/

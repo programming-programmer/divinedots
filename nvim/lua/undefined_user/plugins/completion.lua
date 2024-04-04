@@ -17,6 +17,7 @@ return {
         dependencies = {
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-path',
+            'hrsh7th/cmp-buffer',
             "micangl/cmp-vimtex",
         },
 
@@ -38,6 +39,7 @@ return {
                 sources = cmp.config.sources({
                     { name = 'luasnip' },
                     { name = 'path' },
+                    { name = 'buffer' },
                     { name = 'vimtex' },
                     { name = 'nvim_lsp' }, -- Dependency at ~/.config/nvim/lua/undefined_user/plugins/lspconfig.lua
                 }),

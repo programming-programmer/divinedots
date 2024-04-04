@@ -41,7 +41,6 @@ return {
                         enabled = true,
                         laststatus = 0,
                     },
-                    tmux = { enabled = true },
                 },
 
                 ---@diagnostic disable-next-line: unused-local

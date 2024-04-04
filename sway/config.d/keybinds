@@ -27,7 +27,7 @@ bindsym $mod+u exec yt.sh
 # Browser
 # Qutebrowser come back!!!!! :(((. Actuarlly on further thought, nooo!!!!!!
 bindsym $mod+w exec firefox --new-window
-bindsym $mod+Shift+w exec firefox --private-window
+bindsym $mod+Shift+w exec qutebrowser
 
 # Terminal and stuff
 bindsym $mod+t exec footclient
@@ -39,7 +39,8 @@ bindsym $mod+Shift+t exec footclient nvim ~/notes/gtd.org
 bindsym $mod+Shift+c exec footclient cmus
 
 #Making sure these mfs FLOAT
-for_window [app_id=".*"] floating enable
+for_window [app_id="foot"] floating enable
+for_window [app_id="mpv"] floating enable
 floating_maximum_size 800 x 500
 
 # Thunderbird
